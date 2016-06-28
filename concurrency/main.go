@@ -2,17 +2,15 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"runtime"
 	"sync"
-	"time"
+
+	"github.com/kaleo211/golang-demo/time"
 )
 
 func myPrint(content string) {
 	for i := 0; i < 3; i++ {
-		rand.Seed(time.Now().UnixNano())
-		duration := time.Duration(rand.Intn(200))
-		time.Sleep(duration * time.Millisecond)
+		time.Sleep()
 
 		fmt.Printf("%s: %d\n", content, i)
 	}
