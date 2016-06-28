@@ -2,22 +2,20 @@ package main
 
 import (
 	"fmt"
-	"runtime"
 	"sync"
 
 	"github.com/kaleo211/golang-demo/time"
 )
 
-func myPrint(content string) {
+func myPrint(caller string) {
 	for i := 0; i < 3; i++ {
 		time.Sleep()
 
-		fmt.Printf("%s: %d\n", content, i)
+		fmt.Printf("%s: %d\n", caller, i)
 	}
 }
 
 func main() {
-	runtime.GOMAXPROCS(1)
 	var wg sync.WaitGroup
 	wg.Add(1)
 
