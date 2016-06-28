@@ -35,7 +35,6 @@ func (t Transformer) Shape() {
 
 func main() {
 	var t Transformer
-
 	var h Human
 	t.Runner = h
 	t.Shape()
